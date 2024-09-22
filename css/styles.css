@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+  --primary-color: #004d99;
+  --secondary-color: #ffffff;
+  --accent-color: #ffcc00;
+  --text-color: #333333;
+  --border-color: #cccccc;
+  --input-bg: #f9f9f9;
+  --result-bgcolor: #99ccff; 
+  --font-family-main: "Lexend", sans-serif; 
+  --font-family-code: 'Source Code Pro', monospace; 
+}
+
+html {
+  font-family: var(--font-family-main);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 960px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  font-family: var(--font-family-main);
+  text-align: center;
+  color: var(--primary-color);
+}
+
+input, table {
+  font-family: var(--font-family-code);
+}
+
+input[type="number"] {
+  width: 90%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--input-bg);
+}
+
+#cidr {
+  width: 4em;
+}
+
+table {
+  margin: 1.5rem auto;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.spacer {
+  background-color: transparent;
+  border: none;
+}
+
+output {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--result-bgcolor);
+  border-radius: 5px;
+  font-family: var(--font-family-code);
+  border: 1px solid var(--border-color);
+}
+
+.ipbin td {
+  background-color: #cceeff;
+}
+
+.maskbin td {
+  background-color: #ffcccc;
+}
+
+.result td {
+  background-color: var(--result-bgcolor);
+}
+
+.resultdec td {
+  border-color: var(--result-bgcolor);
+}
+
+/* Estilos para los radio buttons (Clases IP) */
+.ip-classes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ip-classes input[type="radio"] {
+  display: none;
+}
+
+.radio-label {
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  background-color: #f0f8ff;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-family: var(--font-family-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.radio-label:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ip-classes input[type="radio"]:checked + .radio-label {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 10px rgba(255, 105, 0, 0.3);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}

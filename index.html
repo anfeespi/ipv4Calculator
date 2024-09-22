@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora IPv4 | Andrés Espitia</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Code+Pro'>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<h1>Calculadora de IPv4</h1>
+<h2>Dirección IP</h2>
+<div class="ip-classes">
+  <input type="radio" name="ipclass" id="classA" value="classA">
+  <label for="classA" class="radio-label">Clase A</label>
+  
+  <input type="radio" name="ipclass" id="classB" value="classB">
+  <label for="classB" class="radio-label">Clase B</label>
+  
+  <input type="radio" name="ipclass" id="classC" value="classC" checked>
+  <label for="classC" class="radio-label">Clase C</label>
+  
+  <input type="radio" name="ipclass" id="public" value="public">
+  <label for="public" class="radio-label">Pública</label>
+</div>
+<table id="ipaddr">
+  <tr class="ipaddrdec">
+    <td colspan="8">
+      <input id="ip1" type="number" min="0" max="223" step="1" value="192">
+    </td>
+    <td class="spacer">
+    <td colspan="8">
+      <input id="ip2" type="number" min="0" max="255" step="1" value="168">
+     </td>
+    <td class="spacer">
+    <td colspan="8">
+      <input id="ip3" type="number" min="0" max="255" step="1" value="1">
+    </td>
+    <td class="spacer">
+    <td colspan="8">
+      <input id="ip4" type="number" min="0" max="255" step="1" value="12">
+    </td>
+  </tr>
+  <tr id="ipbin" class="ipbin clickable switchable">
+    <td><td><td><td><td><td><td><td>
+    <td class="spacer">
+    <td><td><td><td><td><td><td><td>
+    <td class="spacer">
+    <td><td><td><td><td><td><td><td>
+    <td class="spacer">
+    <td><td><td><td><td><td><td><td>
+  </tr>
+</table>
+
+<label for="cidr">Máscara: </label>
+<input id="cidr" type="number" min="1" max="30" step="1" value="24">
+
+<table>
+  <tr id="maskDec">
+    <td colspan="8"></td>
+    <td class="spacer">
+    <td colspan="8"></td>
+    <td class="spacer">
+    <td colspan="8"></td>
+    <td class="spacer">  
+    <td colspan="8"></td>
+  </tr>
+  <tr id="mask" class="maskbin clickable separable">
+    <td><td><td><td><td><td><td><td>
+    <td class="spacer">
+    <td><td><td><td><td><td><td><td>
+    <td class="spacer">
+    <td><td><td><td><td><td><td><td>
+    <td class="spacer">
+    <td><td><td><td><td><td><td><td>
+  </tr>
+</table>
+
+<h2>Primera Red</h2>
+<table id="netid">
+  <tr class="ipaddrdec" data-content="ipaddrdec">
+    <td colspan="8"> 
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+  </tr>
+  <tr class="ipbin clickable switchable">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+  </tr>
+  <tr class="maskbin clickable separable">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+  </tr>
+  <tr class="result" data-content="netid">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+  </tr>
+  <tr class="resultdec" data-content="netiddec">
+    <td colspan="8"> 
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+  </tr>
+</table>
+
+<p>
+    La primer red de la dirección <output class="addressipdec"></output>/<output class="cidr"></output> es <output class="netiddec"></output>
+</p>
+
+<h2>Broadcast</h2>
+<table id="broadcast">
+  <tr class="ipaddrdec" data-content="ipaddrdec">
+    <td colspan="8"> 
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+  </tr>
+  <tr class="ipbin clickable switchable">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+  </tr>
+  <tr class="maskbin clickable separable">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+  </tr>
+  <tr class="broadcast result">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+    <td class="spacer">
+    <td> <td> <td> <td> <td> <td> <td> <td>
+  </tr>
+  <tr class="broadcastdec resultdec">
+    <td colspan="8"> 
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+    <td class="spacer">
+    <td colspan="8">
+  </tr>
+</table>
+
+<p>
+  La ip de broadcast para <output class="addressipdec"></output>/<output class="cidr"></output> es <output class="broadcastipdec"></output>
+</p>
+
+<h2>Cantidad de host</h2>
+<p>
+  La cantidad de host de la red es de <output class="hostquantity"></output>
+</p>
+
+<h2>Rango de IP Útiles</h2>
+<p>
+  El rango de redes es de <output class="firstutilip"></output> hasta <output class="lastutilip"></output>
+</p>
+
+<h2>Particiones de red</h2>
+<div style="display: flex;">
+  <p>La partición de redes está dada por </p><p style="color: red; margin-left: 8px; margin-right: 8px;">    La red </p> <p style="color: blue;">    El host </p>
+</div>
+<output style="color: red;" class="netpartition"></output><output style="color: blue;" class="hostpartition"></output>
+
+<script  src="./js/app.js"></script>
+
+</body>
+</html>
